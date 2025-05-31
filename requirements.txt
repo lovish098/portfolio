@@ -1,5 +1,2 @@
-from flask import *
-from flask_mysqldb import MySQL
-from flask import *
-import sqlite3
- 
+Flask
+Flask-MySQLdb
