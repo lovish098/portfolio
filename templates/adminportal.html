@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <style>
+  body {
+            font-family: Arial, sans-serif;
+            background: #081b29;
+            color: white;
+        }
+
+        h2 {
+            display: flex;
+            justify-content:center ;
+        }
+
+        .logout {
+            float: right;
+        }
+
+        .logout button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #000;
+            background-color: white;
+            color: black;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        .bttn{
+            margin-top: 5rem;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Admin Portal</h2>
+    
+ 
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Subject</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for contact in contacts %}
+                <tr>
+                    <td>{{ contact['name'] }}</td>
+                    <td>{{ contact['email'] }}</td>
+                    <td>{{ contact['mobile'] }}</td>
+                    <td>{{ contact['subject'] }}</td>
+                    <td>{{ contact['message'] }}</td>
+                  
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="bttn"><a href="/"><button>Logout</button></a></div>
+    
+</body>
+</html>
